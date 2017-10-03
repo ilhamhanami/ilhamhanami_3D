@@ -4,9 +4,9 @@ import java.util.Iterator;
 
 public class AlgodatKelas_3D implements LinearList {
 
-    protected Object[] element, element2;
+     protected Object[] element, element2;
     protected int size, capacity;
-    int index,count;
+    int index, count;
 
 //    public AlgodatKelas_3D( int initialCapacity){
 //        if(initialCapacity < 1)
@@ -70,20 +70,20 @@ public class AlgodatKelas_3D implements LinearList {
 
     @Override
     public void add(int index, Object theElement) {
-        if(index < 0 || index > size){
-            throw new IndexOutOfBoundsException("index ="+index+"size ="+ size);
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("index =" + index + "size =" + size);
         }
-        if(size == element.length){
+        if (size == element.length) {
             AlgodatKelas_3D ada = new AlgodatKelas_3D(size);
         }
-        if(element.length > size){
-        for(int i = size - 1; i >= index; i--){
-            element[i + 1] = element[i];
+        if (element.length > size) {
+            for (int i = size - 1; i >= index; i--) {
+                element[i + 1] = element[i];
+            }
+            element[index] = theElement;
+            size++;
         }
-        element[index] = theElement;
-        size++;}
     }
-    
 
     @Override
     public String toString() {
@@ -137,14 +137,14 @@ public class AlgodatKelas_3D implements LinearList {
         }
         return size;
     }
-    
+
     @Override
-    public void changeLength2D(int index,Object obj){
-            if(size <= capacity){
-                
-            }
+    public void changeLength2D(int index, Object obj) {
+        if (size <= capacity) {
+
+        }
     }
-    
+
     @Override
     public void removeRange(int fromIndex, int toIndex) {
         count++;
