@@ -6,7 +6,7 @@ public class AlgodatKelas_3D implements LinearList {
 
     protected Object[] element, element2;
     protected int size, capacity;
-    int index;
+    int index,count;
 
 //    public AlgodatKelas_3D( int initialCapacity){
 //        if(initialCapacity < 1)
@@ -143,5 +143,30 @@ public class AlgodatKelas_3D implements LinearList {
             if(size <= capacity){
                 
             }
+    }
+    
+    @Override
+    public void removeRange(int fromIndex, int toIndex) {
+        count++;
+        int numMove = size - toIndex;
+        System.arraycopy(element, toIndex, element, fromIndex, numMove);
+        int newSize = size - (toIndex - fromIndex);
+        while (size != newSize) {
+            element[--size] = null;
+        }
+    }
+
+    @Override
+    public Object clear() {
+        for (int i = 0; i < size; i++) {
+            element[i] = null;
+        }
+        return element;
+    }
+
+    public Object clone(Object[] a) {
+        a = new Object[size];
+        a = element.clone();
+        return toString();
     }
 }
